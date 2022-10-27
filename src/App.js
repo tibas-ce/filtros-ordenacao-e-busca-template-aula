@@ -23,11 +23,13 @@ function App() {
       <GlobalStyle />
       <Header />
       <CardsContainer>
-        <PokemonCard
-          cardColor={getColors(pokemons[0].type[0])}
-          key={pokemons[0].id}
-          pokemon={pokemons[0]}
+        {pokemons.map((pokemon) => {
+          return <PokemonCard
+          cardColor={getColors(pokemon.type[0])}
+          key={pokemon.id}
+          pokemon={pokemon}
         />
+        })}
       </CardsContainer>
     </>
   );

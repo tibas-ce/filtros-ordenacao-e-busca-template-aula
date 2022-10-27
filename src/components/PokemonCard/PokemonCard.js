@@ -9,8 +9,8 @@ const PokemonCard = (props) => {
   return (
     <Container color={props.cardColor}>
       <div>
-        <PokemonNumber>{"001"}</PokemonNumber>
-        <PokemonName>{"Bulbasaur"}</PokemonName>
+        <PokemonNumber>{props.pokemon.id}</PokemonNumber>
+        <PokemonName>{props.pokemon.name.english}</PokemonName>
         <TypesContainer>
             {props.pokemon.type.map((type) => {
                 return <PokemonType key={type} src={getTypes(type)} alt='' />
@@ -19,7 +19,7 @@ const PokemonCard = (props) => {
         <p>Detalhes</p>
       </div>
       <div>
-        <Pokemon src={`https://www.serebii.net/swordshield/pokemon/001.png`} alt="" />
+        <Pokemon src={`https://www.serebii.net/swordshield/pokemon/${props.pokemon.id}.png`} alt="" />
         <CatchButton>Capturar!</CatchButton>
       </div>
       <Pokeball src={pokeball} alt="pokeball" />
